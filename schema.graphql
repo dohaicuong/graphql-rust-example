@@ -1,0 +1,19 @@
+type Mutation {
+	postCreate(input: PostCreateInput!): Post!
+}
+type Post {
+	id: Int!
+	title: String!
+	body: String!
+}
+input PostCreateInput {
+	title: String!
+	body: String!
+}
+type Query {
+	postConnection: [Post!]!
+}
+schema {
+	query: Query
+	mutation: Mutation
+}
